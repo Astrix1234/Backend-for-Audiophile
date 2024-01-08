@@ -1,32 +1,15 @@
 import express from "express";
 import cors from "cors";
-import passport from "passport";
-import path from "path";
-import { fileURLToPath } from "url";
-
-import router from "./routes/api/contacts.js";
-import routerUsers from "./routes/api/users.js";
-
-import "./config/config-passport.js";
-
 import dotenv from "dotenv";
-
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
+import router from "./routes/api/products.js";
 
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
-
 app.use(cors());
-
-app.use(passport.initialize());
-
-app.use(express.static(path.join(__dirname, "public")));
-
 app.use("/api", router);
-app.use("/api", routerUsers);
 
 app.use((_, res, __) => {
   res.status(404).json({

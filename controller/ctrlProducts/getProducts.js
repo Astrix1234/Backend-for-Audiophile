@@ -1,13 +1,13 @@
-import contactsService from "#service/contactsService.js";
+import productsService from "#service/productsService.js";
 
 export const get = async (req, res, next) => {
   try {
-    const results = await contactsService.getAllContacts(value);
+    const results = await productsService.getAllProducts(value);
     res.json({
       status: "success",
       code: 200,
       data: {
-        contacts: results,
+        products: results,
       },
     });
   } catch (e) {

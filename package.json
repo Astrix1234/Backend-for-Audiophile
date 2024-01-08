@@ -45,10 +45,7 @@
     "supertest": "^6.3.3"
   },
   "imports": {
-    "#ctrlContacts/*": "./controller/ctrlContacts/*",
-    "#ctrlUser/*": "./controller/ctrlUser/*",
-    "#service/*": "./service/*",
-    "#config/*": "./config/*",
-    "#validators/*": "./validators/*"
+    "#ctrlProducts/*": "./controller/ctrlProducts/*",
+    "#service/*": "./service/*"
   }
 }
