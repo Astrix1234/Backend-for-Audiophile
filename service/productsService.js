@@ -9,9 +9,7 @@ const uriDb = process.env.DB_HOST;
 const client = new MongoClient(uriDb);
 
 const connectDB = async () => {
-  if (!client.isConnected()) {
-    await client.connect();
-  }
+  await client.connect();
   return client.db(databaseName);
 };
 
