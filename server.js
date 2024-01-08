@@ -1,19 +1,21 @@
 import app from "./app.js";
-import mongoose from "mongoose";
+import { MongoClient } from "mongodb";
 
 import dotenv from "dotenv";
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
 const uriDb = process.env.DB_HOST;
+const client = new MongoClient(uriDb, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 const startServer = async () => {
   try {
-    await mongoose.connect(uriDb, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
+    await client.connect();
     console.log(`Database connection successful`);
+
     app.listen(PORT, () => {
       console.log(`Server running. Use our API on port: ${PORT}`);
     });

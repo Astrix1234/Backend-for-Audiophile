@@ -4,6 +4,6 @@ import { get } from "#ctrlProducts/getProducts.js";
 
 const router = express.Router();
 
-router.get("/contacts", get);
+router.get("/products", get);
 
 export default router;

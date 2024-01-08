@@ -2,7 +2,7 @@ import productsService from "#service/productsService.js";
 
 export const get = async (req, res, next) => {
   try {
-    const results = await productsService.getAllProducts(value);
+    const results = await productsService.getAllProducts();
     res.json({
       status: "success",
       code: 200,
