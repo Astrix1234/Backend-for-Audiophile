@@ -7,6 +7,12 @@ dotenv.config();
 
 const app = express();
 
+app.use(
+  cors({
+    origin: "*",
+  })
+);
+
 app.use(express.json());
 app.use(cors());
 app.use("/api", router);
